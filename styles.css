@@ -1,15 +1,16 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: aliceblue;
+  background-color: black;
 }
 
 .container {
   max-width: 600px;
   margin: 50px auto;
   text-align: center;
+  color: #fff;
 }
 
-button {
+.btn {
   padding: 10px 30px;
   font-size: 16px;
   background-color: #007bff;
@@ -19,6 +20,15 @@ button {
   border-radius: 20px;
 }
 
-button:hover {
+.btn:hover {
   background-color: #003267;
+}
+
+.quote {
+  font-style: italic;
+}
+
+.quote::before,
+.quote::after {
+  content: '"';
 }
