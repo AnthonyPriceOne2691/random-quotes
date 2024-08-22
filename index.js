@@ -15,9 +15,9 @@ const favoritesContainer = document.getElementById('favorites-container');
 let currentQuoteindex;
 
 function generateRandomQuote() {
-  currentQuoteindex = Math.floor(Math.random() * quotes.length);
-  const randomQuote = quotes[currentQuoteindex];
-  const { quote, author } = randomQuote;
+  const randomIndex = generateRandomInt(quotes.length);
+  currentQuoteindex = randomIndex;
+  const { quote, author, isFavorite } = quotes[randomIndex];
   quoteElement.textContent = quote;
   quoteAuthorElement.textContent = author;
   toggleFavoriteIcon(isFavorite, toggleFavoriteBtn);
