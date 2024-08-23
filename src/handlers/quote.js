@@ -1,8 +1,16 @@
 import { handleFavorite } from './favorites.js';
 import { generateRandomInt } from '../utils.js';
-import { quotes } from '../data/quotes.js';
 
-let currentQuote = null;
+function handleQuote(quotes, setCurrentQuote) {
+  const randomQuote = choseRandomQuote(quotes);
+  setCurrentQuote(randomQuote);
+  displayQuote(randomQuote);
+}
+
+function choseRandomQuote(quotes) {
+  const randomIndex = generateRandomInt(quotes.length);
+  return quotes[randomIndex];
+}
 
 function displayQuote(quote) {
   const { text, author, isFavorite } = quote;
@@ -13,15 +21,4 @@ function displayQuote(quote) {
   handleFavorite(isFavorite);
 }
 
-function choseRandomQuote(quotes) {
-  const randomIndex = generateRandomInt(quotes.length);
-  return quotes[randomIndex];
-}
-
-function handleQuote() {
-  const randomQuote = choseRandomQuote(quotes);
-  currentQuote = randomQuote;
-  displayQuote(currentQuote);
-}
-
-export { handleQuote, currentQuote };
+export { handleQuote };
