@@ -18,7 +18,7 @@ function displayQuote(quote) {
   const quoteElement = document.getElementById('quote');
   const quoteAuthorElement = document.getElementById('author');
   quoteElement.dataset.currentQuoteId = id;
-  quoteTextElement.textContent = text;
+  quoteTextElement.textContent = `"${text}"`;
   quoteAuthorElement.textContent = author;
   handleFavorite(isFavorite);
 }
